@@ -91,13 +91,13 @@
 
 @media screen and (min-width: 48em) {
   :root {
-    font-size: clamp(1rem, 1rem + .2vw, 2rem);
+    font-size: clamp(1rem, 1rem - 1px + .2vw, 2rem);
   }
 }
 
 @media screen and (min-width: 64em) {
   :root {
-    font-size: clamp(1rem, 1rem + .3vw, 2rem);
+    font-size: clamp(1rem, 1rem - 1px + .3vw, 2rem);
   }
   .container__heading {font-size: 2rem;}
   .container__powered-by {font-size: 2rem;}
