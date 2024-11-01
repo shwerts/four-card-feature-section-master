@@ -1,0 +1,116 @@
+:root {
+  --text-primary-color: hsl(229, 6%, 66%);
+  --heading-color: hsl(234, 12%, 34%);
+  --body-bg-color: hsl(0, 0%, 98%);
+
+  --cyan: hsl(180, 62%, 55%);
+  --red: hsl(0, 78%, 62%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+
+  color: var(--text-primary-color);
+  font-family: Poppins, sans-serif;
+  font-display: block;
+  font-weight: 400;
+  font-size: calc(1rem - 1px);
+  background: var(--body-bg-color);
+}
+.container {
+  padding: 30px;
+  min-block-size: 100vh;
+}
+
+.container__text {
+  margin-block-start: 50px;
+  text-align: center;
+}
+.container__heading {
+  font-weight: 200;
+  color: var(--heading-color);
+  font-size: 1.6rem;
+}
+.container__powered-by {
+  font-weight: 600;
+  color: var(--heading-color);
+  font-size: 1.6rem;
+}
+.container__paragraph {
+  margin-inline: auto;
+  margin-block-start: 20px;
+  max-width: 33ch;
+}
+
+.card-container {
+  margin-block-start: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+.card {
+  flex: 20rem;
+  font-size: .9rem;
+  line-height: 1.8;
+  padding: 30px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow:
+    4px 0px 16px #0002,
+    -2px 1px 16px #0002;
+}
+.card p {
+  margin-block-start: 0;
+}
+.card h2 {
+  font-size: 1.5em;
+  margin-block-start: 0;
+  color: var(--heading-color);
+}
+.card__icon {
+  display: block;
+  float: right;
+  margin-top: 20px;
+}
+
+.card_color_cyan {
+  border-block-start: 4px solid var(--cyan);
+  grid-area: cyan;
+}
+.card_color_red {
+  border-block-start: 4px solid var(--red);
+  grid-area: red;
+}
+.card_color_orange {
+  border-block-start: 4px solid var(--orange);
+  grid-area: orange;
+}
+.card_color_blue {
+  border-block-start: 4px solid var(--blue);
+  grid-area: blue;
+}
+
+@media screen and (min-width: 48em) {
+  :root {
+    font-size: clamp(1rem, 1rem + .2vw, 2rem);
+  }
+}
+
+@media screen and (min-width: 64em) {
+  :root {
+    font-size: clamp(1rem, 1rem + .3vw, 2rem);
+  }
+  .container__heading {font-size: 2rem;}
+  .container__powered-by {font-size: 2rem;}
+  .container__paragraph {max-width: 45ch;}
+  .card-container {
+    padding-inline: 6vw;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      ". red ."
+      "cyan red blue"
+      "cyan orange blue"
+      ". orange .";
+  }
+}
